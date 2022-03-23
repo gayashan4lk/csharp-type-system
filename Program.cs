@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace BethanysPieShopHRM
 {
@@ -6,73 +7,48 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
-            int monthlyWage = 123;
-            int months = 12, bonus = 1000;
-            bool isActive = true;
-            double rating = 99.9;
-            double ratePerHour = 12.34;
-            int numberOfHoursWorked = 165;
+            string name = "Leonado";
+            string emptyString = String.Empty;
+            var someString = "MotherFucker";
+            string nullString = null;
+            string unsignedString;
 
-            double currentMonthWage = ratePerHour * numberOfHoursWorked + bonus;
+            string firstName = "Albert";
+            string lastName = "Einstaine";
+            string fullName = firstName + " " + lastName;
+            Console.WriteLine(fullName);
 
-            Console.WriteLine(currentMonthWage);
+            string theSciencetist = string.Concat(firstName, " ", lastName);
+            Console.WriteLine(theSciencetist);
 
-            ratePerHour += 3; // ratePerHour = ratePerHour + 3;
+            string crazyName = firstName.ToLower() + " - " + lastName.ToUpper();
+            Console.WriteLine(crazyName);
 
-            if (currentMonthWage > 2000)
-            {
-                Console.WriteLine("Top paid employee");
-            }
+            string effectiveString = $"{fullName} {lastName}";
+            Console.WriteLine(effectiveString);
 
-            int numberOfEmployees = 15;
-            numberOfEmployees--;
+            Console.WriteLine("Here are the employee details : \nBethany\tSmith");
+            Console.WriteLine("File Path : C:\\data\\details.txt");
+            Console.WriteLine("Baking the \"best pies\" ever");
+            string verbateFilePath = @"C:\data\dtails.txt";
+            Console.WriteLine(verbateFilePath);
 
-            bool a; // Default assigned value = false
-            int b;  // Default assigned value = 0
+            string str = "Maxwell";
+            bool isEqual = str == "Maxwell";
+            bool strResult = str == "maxwell";
+            bool anotherResult = str.Equals("Maxwell");
 
-            Console.WriteLine("Pleas Enter Any Number :");
-            string input = Console.ReadLine();
-            int number = Convert.ToInt32(input);
-            Console.WriteLine($"You entered {number}");
+            StringBuilder strBuild = new StringBuilder();
+            strBuild.Append("Employee list");
+            strBuild.AppendLine("Bethany Smith");
+            strBuild.AppendLine("George Jones");
+            string list = strBuild.ToString();
+            Console.WriteLine(list);
 
-            int intMaxValue = int.MaxValue;
-            int intMinValue = int.MinValue;
+            string wageString = Console.ReadLine();
+            double wageNumber = double.Parse(wageString);
 
-            char userSelection = 'a';
-            char upperVersion = char.ToUpper(userSelection);
-            bool isDigit = char.IsDigit(userSelection);
-            bool isLetter = char.IsLetter(userSelection);
-
-            DateTime hireDate = new DateTime(2022, 03, 28, 14, 30, 0);
-            Console.WriteLine($"Hired Date is {hireDate}");
-
-            DateTime exitDate = new DateTime(2022, 12, 12);
-            Console.WriteLine($"Leaving Date is {exitDate}");
-
-            // DateTime invalidDate = new DateTime(2022, 25, 25); // Exception : Un-representable DateTime
-
-            DateTime startDate = hireDate.AddDays(15);
-
-            DateTime currentDate = DateTime.Now;
-            Console.WriteLine(currentDate);
-
-            bool areWeInDst = currentDate.IsDaylightSavingTime();
-            Console.WriteLine($"Are We In Day light Saving Time {areWeInDst}");
-
-            DateTime startHour = DateTime.Now;
-            Console.WriteLine(startHour.ToLongDateString());
-
-            TimeSpan workTime = new TimeSpan(8, 20, 12);
-            DateTime endHour = startHour.Add(workTime);
-            Console.WriteLine(endHour.ToShortDateString());
-
-            Console.WriteLine($"Work end hour is {endHour}");
-
-            int integerNumber = 256844;
-            long longNumber = integerNumber;
-            double doubleNumber = 123456789.254;
-            int integerNumber2 = (int)doubleNumber;
-
+            bool active = bool.Parse("true");
 
         }
     }
