@@ -6,7 +6,13 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int monthlyWage = 123;
+            int months = 12, bonus = 1000;
+            bool isActive = true;
+            double rating = 99.9;
+            byte numberOfEmployees = 120;
+
+            Console.ReadLine();
         }
     }
 }
