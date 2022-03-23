@@ -67,6 +67,13 @@ namespace BethanysPieShopHRM
             Console.WriteLine(endHour.ToShortDateString());
 
             Console.WriteLine($"Work end hour is {endHour}");
+
+            int integerNumber = 256844;
+            long longNumber = integerNumber;
+            double doubleNumber = 123456789.254;
+            int integerNumber2 = (int)doubleNumber;
+
+
         }
     }
 }
