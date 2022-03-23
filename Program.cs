@@ -29,6 +29,20 @@ namespace BethanysPieShopHRM
 
             bool a; // Default assigned value = false
             int b;  // Default assigned value = 0
+
+            string input = Console.ReadLine();
+            int number = Convert.ToInt32(input);
+            Console.WriteLine($"You entered {number}");
+
+            int intMaxValue = int.MaxValue;
+            int intMinValue = int.MinValue;
+
+            char userSelection = 'a';
+            char upperVersion = char.ToUpper(userSelection);
+            bool isDigit = char.IsDigit(userSelection);
+            bool isLetter = char.IsLetter(userSelection);
+
+
         }
     }
 }
