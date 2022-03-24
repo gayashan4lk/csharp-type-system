@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace BethanysPieShopHRM
@@ -7,25 +9,77 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
-            int avr = CalcAvr(1, 2, 3, 6, 8, 10);
-            Console.WriteLine(avr);
-        
-            Console.WriteLine($"MultiPlyied Number is : {MultiplyNumber(25, 3)}");
+            //List<string> myListObject = new List<string>();
 
+            UsingMyEnum();
+            UsingMyStruct();
+            var employeeValue = EmployeeType.Manager;
+            Console.WriteLine(employeeValue);
         }
 
-        public static int CalcAvr(params int[] num)
+        private static void UsingMyStruct()
         {
-            int total = 0;
-
-            for(int i = 0; i < num.Length; i++)
-            {
-                total += num[i];
-            }
-            return total / num.Length;
+            Employee employee;
+            employee.Name = "Edward";
+            employee.Wage = 2563;
+            employee.Work();
         }
 
-        // Expression-Bodied Syntax
-        public static int MultiplyNumber(int number, int multiplier) => number * multiplier;
+        struct Employee
+        {
+            public string Name;
+            public int Wage;
+
+            public void Work()
+            {
+                Console.WriteLine($"{Name} is now doing work!");
+            }
+        }
+
+        private static void UsingMyEnum()
+        {
+            EmployeeType employeeType = EmployeeType.Manager;
+            StoreType storeType = StoreType.Seating;
+            int baseWage = 1000;
+
+            CalculateWage(baseWage, employeeType, storeType);
+        }
+
+        private static void CalculateWage(int baseWage, EmployeeType employeeType, StoreType storeType)
+        {
+            int calculateWage = 0;
+
+            if(employeeType == EmployeeType.Manager)
+            {
+                calculateWage = baseWage * 3;
+            }
+            else
+            {
+                calculateWage *= 2;
+            }
+
+            if(storeType == StoreType.FullPieRestaurant)
+            {
+                calculateWage += 500;
+            }
+
+            Console.WriteLine($"The calculated Wage : {calculateWage}");
+        }
+
+        enum EmployeeType
+        {
+            Sales, // 0
+            Manager, // 1
+            Research, // 2
+            StoreManager // 3
+        }
+
+        enum StoreType
+        {
+            PieCorner = 10,
+            Seating = 20,
+            FullPieRestaurant = 100,
+            Undefined = 99
+        }
     }
 }
