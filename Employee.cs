@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM
-{
+{    
     public class Employee
     {
         public string firstName;
@@ -18,6 +18,20 @@ namespace BethanysPieShopHRM
         public DateTime birthday;
 
         public EmployeeType employeeType;
+
+        public Employee(string firstName, string lastName, string email, double hourlyRate, DateTime birthday, EmployeeType employeeType)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.hourlyRate = hourlyRate;
+            this.birthday = birthday;
+            this.employeeType = employeeType;
+        }
+
+        public Employee(string firstName, string lastName, string email, DateTime birthday, EmployeeType employeeType) : this(firstName, lastName, email, 0, birthday, employeeType)
+        {
+        }
 
         public void PerformWork()
         {
