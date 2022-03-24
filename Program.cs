@@ -9,6 +9,7 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
