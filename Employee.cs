@@ -8,25 +8,128 @@ namespace BethanysPieShopHRM
 {    
     public class Employee
     {
-        public string firstName;
-        public string lastName;
-        public string email;
+        private string firstName;
+        private string lastName;
+        private string email;
 
-        public int numberOfHoursWorked;
-        public double wage;
-        public double hourlyRate;
-        public DateTime birthday;
+        private int numberOfHoursWorked;
+        private double wage;
+        private double hourlyRate;
+        private DateTime birthday;
 
         public EmployeeType employeeType;
 
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
+            set
+            {
+                firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+        }
+
+        public int NumberOfHoursWorked
+        {
+            get
+            {
+                return numberOfHoursWorked;
+            }
+            set
+            {
+                numberOfHoursWorked = value;
+            }
+        }
+
+        public double Wage
+        {
+            get
+            {
+                return wage;
+            }
+            set
+            {
+                if(value < 0)
+                {
+                    wage = 0;
+                }
+                else
+                {
+                    wage = value;
+                }
+            }
+        }
+
+        public double HourlyRate
+        {
+            get
+            {
+                return hourlyRate;
+            }
+            set
+            {
+                hourlyRate = value;
+            }
+        }
+
+        public DateTime Birthday
+        {
+            get
+            {
+                return birthday;
+            }
+            set
+            {
+                birthday = value;
+            }
+        }
+
+        public EmployeeType EmployeeType
+        {
+            get
+            {
+                return employeeType;
+            }
+            set
+            {
+                employeeType = value;
+            }
+        }
+
         public Employee(string firstName, string lastName, string email, double hourlyRate, DateTime birthday, EmployeeType employeeType)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-            this.hourlyRate = hourlyRate;
-            this.birthday = birthday;
-            this.employeeType = employeeType;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            HourlyRate = hourlyRate;
+            Birthday = birthday;
+            EmployeeType = employeeType;
         }
 
         public Employee(string firstName, string lastName, string email, DateTime birthday, EmployeeType employeeType) : this(firstName, lastName, email, 0, birthday, employeeType)
@@ -35,28 +138,28 @@ namespace BethanysPieShopHRM
 
         public void PerformWork()
         {
-            numberOfHoursWorked++;
+            NumberOfHoursWorked++;
 
-            Console.WriteLine($"{firstName} {lastName} is now working!");
+            Console.WriteLine($"{FirstName} {LastName} is now working!");
         }
 
         public void StopWorking()
         {
-            Console.WriteLine($"{firstName} {lastName} has stopped working!");
+            Console.WriteLine($"{FirstName} {LastName} has stopped working!");
         }
 
         public double ReceiveWage()
         {
-            wage = numberOfHoursWorked * hourlyRate;
-            Console.WriteLine($"The wage for {numberOfHoursWorked} hours of work is {wage}");
-            numberOfHoursWorked = 0;
+            Wage = NumberOfHoursWorked * HourlyRate;
+            Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}");
+            NumberOfHoursWorked = 0;
 
-            return wage;
+            return Wage;
         }
 
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"\nFirst name : {firstName}\nLast name : {lastName}\nEmail : {email}\nBirthday : {birthday.ToShortDateString()}\nEmployee type : {employeeType}\n");
+            Console.WriteLine($"\nFirst name : {FirstName}\nLast name : {LastName}\nEmail : {Email}\nBirthday : {Birthday.ToShortDateString()}\nEmployee type : {EmployeeType}\n");
         }
     }
 }
