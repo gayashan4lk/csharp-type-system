@@ -8,7 +8,7 @@ namespace BethanysPieShopHRM
 {
     internal class MethodPassingParams
     {
-        static void MethodPassing(string[] args)
+        static void MethodPassingMain(string[] args)
         {
             int numberOfMonths = 12;
             int bonus = 5000;

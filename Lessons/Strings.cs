@@ -8,7 +8,7 @@ namespace BethanysPieShopHRM
 {
     internal class Strings
     {
-        static void StringMethod(string[] args)
+        static void StringMain(string[] args)
         {
             string name = "Leonado";
             string emptyString = String.Empty;

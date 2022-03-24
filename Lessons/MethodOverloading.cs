@@ -8,7 +8,7 @@ namespace BethanysPieShopHRM
 {
     internal class MethodOverloading
     {
-        static void MethodOverloading(string[] args)
+        static void MethodOverLoadingMain(string[] args)
         {
             Console.WriteLine($"Robert's Yearly Salary is {CalculateYearlyWage(25000, 12, 50000)}");
             Console.WriteLine($"Jane's Yearly Salary is {CalculateYearlyWage(14000, 12)}");

@@ -8,7 +8,7 @@ namespace BethanysPieShopHRM
 {
     internal class DataTypes
     {
-        static void DataType(string[] args)
+        static void DataTypeMain(string[] args)
         {
             int monthlyWage = 123;
             int months = 12, bonus = 1000;

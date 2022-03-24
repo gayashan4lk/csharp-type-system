@@ -8,7 +8,7 @@ namespace BethanysPieShopHRM.Lessons
 {
     internal class EnumsAndStructs
     {
-        static void EnumAndStructs(string[] args)
+        static void EnumAndStructsMain(string[] args)
         {
             //List<string> myListObject = new List<string>();
 
