@@ -7,34 +7,25 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
-            int numberOfMonths = 12;
-            int bonus = 5000;
-            Console.WriteLine(CalcSal(2500, numberOfMonths, bonus));
-            Console.WriteLine(bonus);
-            Console.WriteLine(CalcSal(2456.45543, ref bonus));
-            Console.WriteLine(bonus);
-        }
+            int avr = CalcAvr(1, 2, 3, 6, 8, 10);
+            Console.WriteLine(avr);
         
-        public static int CalcSal(int monthlySal, int numberOfMonths, int bonus)
-        {
-            if(monthlySal < 2000)
-            {
-                bonus *= 2;
-                Console.WriteLine("Bonus doubled.");
-            }
-            return monthlySal * numberOfMonths + bonus;
+            Console.WriteLine($"MultiPlyied Number is : {MultiplyNumber(25, 3)}");
+
         }
 
-        public static double CalcSal(double monthlySal, ref int bonus)
+        public static int CalcAvr(params int[] num)
         {
-            if(monthlySal < 3000)
+            int total = 0;
+
+            for(int i = 0; i < num.Length; i++)
             {
-                bonus *= 3;
-                Console.WriteLine("Bonus trippled");
+                total += num[i];
             }
-            double result = monthlySal *  bonus;
-            return result;
+            return total / num.Length;
         }
-        
+
+        // Expression-Bodied Syntax
+        public static int MultiplyNumber(int number, int multiplier) => number * multiplier;
     }
 }
