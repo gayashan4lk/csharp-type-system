@@ -10,12 +10,12 @@ namespace BethanysPieShopHRM
     {
         private string firstName;
         private string lastName;
-        private string email;
+        //private string email;
 
         private int numberOfHoursWorked;
         private double wage;
         private double hourlyRate;
-        private DateTime birthday;
+        //private DateTime birthday;
 
         public EmployeeType employeeType;
 
@@ -43,7 +43,7 @@ namespace BethanysPieShopHRM
             }
         }
 
-        public string Email
+       /* public string Email
         {
             get
             {
@@ -53,7 +53,7 @@ namespace BethanysPieShopHRM
             {
                 email = value;
             }
-        }
+        }*/
 
         public int NumberOfHoursWorked
         {
@@ -98,7 +98,7 @@ namespace BethanysPieShopHRM
             }
         }
 
-        public DateTime Birthday
+        /*public DateTime Birthday
         {
             get
             {
@@ -108,7 +108,7 @@ namespace BethanysPieShopHRM
             {
                 birthday = value;
             }
-        }
+        }*/
 
         public EmployeeType EmployeeType
         {
@@ -122,25 +122,21 @@ namespace BethanysPieShopHRM
             }
         }
 
-        public Employee(string firstName, string lastName, string email, double hourlyRate, DateTime birthday, EmployeeType employeeType)
+        public Employee(string firstName, string lastName, double hourlyRate)
         {
             FirstName = firstName;
             LastName = lastName;
-            Email = email;
             HourlyRate = hourlyRate;
-            Birthday = birthday;
-            EmployeeType = employeeType;
         }
 
-        public Employee(string firstName, string lastName, string email, DateTime birthday, EmployeeType employeeType) : this(firstName, lastName, email, 0, birthday, employeeType)
+        public Employee(string firstName, string lastName) : this(firstName, lastName, 0)
         {
         }
 
-        public void PerformWork()
+        public int PerformWork(int hours)   
         {
-            NumberOfHoursWorked++;
-
-            Console.WriteLine($"{FirstName} {LastName} is now working!");
+            NumberOfHoursWorked += hours;
+            return NumberOfHoursWorked;
         }
 
         public void StopWorking()
@@ -148,18 +144,18 @@ namespace BethanysPieShopHRM
             Console.WriteLine($"{FirstName} {LastName} has stopped working!");
         }
 
-        public double ReceiveWage()
+        public double ReceiveWage(out int hoursWorked)
         {
             Wage = NumberOfHoursWorked * HourlyRate;
             Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}");
             NumberOfHoursWorked = 0;
-
+            hoursWorked = NumberOfHoursWorked;
             return Wage;
         }
 
         public void DisplayEmployeeDetails()
         {
-            Console.WriteLine($"\nFirst name : {FirstName}\nLast name : {LastName}\nEmail : {Email}\nBirthday : {Birthday.ToShortDateString()}\nEmployee type : {EmployeeType}\n");
+            Console.WriteLine($"\nFirst name : {FirstName}\nLast name : {LastName}\nEmployee type : {EmployeeType}\n");
         }
     }
 }
