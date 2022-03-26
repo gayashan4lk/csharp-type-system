@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BethanysPieShopHRM
+namespace BethanysPieShopHRM.Lessons
 {
     internal class Strings
     {
