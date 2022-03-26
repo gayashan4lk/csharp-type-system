@@ -9,16 +9,59 @@ namespace BethanysPieShopHRM
     {
         static void Main(string[] args)
         {
-            Employee bethany = new Employee("Bethany", "Smith", "bethany@gmail.com", 25, new DateTime(1992, 5, 15), EmployeeType.Manager);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("**************************\n  Bethany's Pie Shop HRM\n**************************");
 
-            /* bethany.firstName = "John";
-             bethany.hourlyRate = 10;*/
+            if(Console.ForegroundColor != ConsoleColor.Black)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+
+            Console.WriteLine("Select an action\n1. Register Employee\n2.Register work hours for employee\n3.Pay employee\n9.Exit");
+
+            string userInput = Console.ReadLine();
+
+            do
+            {
+                switch (userInput)
+                {
+                    case "1":
+                        Console.WriteLine("Selected Register Emp");
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Selected Register work hours");
+                        break;
+
+                    case "3":
+                        Console.WriteLine("Selected pay emp");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input");
+                        break;
+                }
+            userInput = Console.ReadLine();
+            }
+            while (userInput != "9");
+
+            Console.Clear();
+            Environment.Exit(-1);
+
+
+
+
+
+            /*Employee bethany = new Employee("Bethany", "Smith", "bethany@gmail.com", 25, new DateTime(1992, 5, 15), EmployeeType.Manager);
+
+            *//* bethany.firstName = "John";
+             bethany.hourlyRate = 10;*//*
             //Employee notPossibleEmployee = new Employee(); // Default constructor is not exist.
 
-            /*// Objects are reference type.
+            *//*// Objects are reference type.
             Employee testEmployee = bethany;
             testEmployee.firstName = "Gill";
-            testEmployee.DisplayEmployeeDetails();*/
+            testEmployee.DisplayEmployeeDetails();*//*
 
             bethany.DisplayEmployeeDetails();
             bethany.PerformWork();
@@ -36,7 +79,7 @@ namespace BethanysPieShopHRM
             george.PerformWork();
             george.PerformWork();
             george.PerformWork();
-            george.ReceiveWage();
+            george.ReceiveWage();*/
         }
     }
 }
