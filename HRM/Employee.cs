@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BethanysPieShopHRM
+namespace BethanysPieShop.HRM
 {    
     public class Employee
     {
@@ -147,7 +147,7 @@ namespace BethanysPieShopHRM
         public double ReceiveWage(out int hoursWorked)
         {
             Wage = NumberOfHoursWorked * HourlyRate;
-            Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}");
+            Console.WriteLine($"Hours: {NumberOfHoursWorked} , Rate: $ {HourlyRate} , Total wage: $ {Wage}.");
             NumberOfHoursWorked = 0;
             hoursWorked = NumberOfHoursWorked;
             return Wage;

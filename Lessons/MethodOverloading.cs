@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BethanysPieShopHRM.Lessons
+namespace BethanysPieShop.Lessons
 {
     internal class MethodOverloading
     {

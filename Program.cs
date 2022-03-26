@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BethanysPieShop.HRM;
 
-namespace BethanysPieShopHRM
+namespace BethanysPieShop
 {
     internal class Program
     {
